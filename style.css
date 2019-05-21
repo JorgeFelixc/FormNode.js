@@ -1,0 +1,73 @@
+html{
+    height: 100%;
+    width: 100%;
+}
+
+body{
+    height: 100%;
+    width:100%;
+    background-color:black;
+    margin:0;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.form-wrapper{
+    height: 50%;
+    width:30%;
+    position: absolute;
+    left:30%;
+    top:20%;
+    font-size:18px;
+}
+
+.title{ 
+    position: relative;
+    display:inline-block;
+    width: 100%;
+    font-size:35px;
+    padding:20px;
+    transition: 0.2s all;
+    margin-bottom: 30px;
+    color: white;
+}
+.title:hover::before{
+    width:90%;
+    left:-20%;
+}   
+
+.title::before{
+    content:'';
+    position: absolute;
+    bottom:0;
+    height: 1px;
+    width: 50%;
+    transition: 0.2s all ease-in-out;
+    background-color:white;
+    left:0;
+}
+
+.inputs{
+    border-style: none;
+    background-color:transparent;
+    border-bottom: 1px solid white;
+    color:white;
+    outline: none;
+    padding: 3px;
+    width:52%;
+    margin-bottom: 20px;
+}
+
+.btn{
+    width:54%;
+    padding:3px;
+    height: 30px;
+    border-style: none;
+    background-color:white;
+    color:black;
+    transition: 0.199s all ease-in-out;
+}
+
+.btn:hover{
+    border:1px solid white;
+    background-color:black;
+    color:white;
+}
