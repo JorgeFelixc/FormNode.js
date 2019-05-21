@@ -8,24 +8,29 @@ const express = require("express"),
 
     //abriendo power shell
 var  spawn = require("child_process").spawn,child;
-child = spawn("powershell.exe",["C:\\Users\\dell\\Desktop\\Proyectos\\Servers\\NodeForm\\createUser.ps1"])
-child.stdout.on("data",(data) =>{
-  console.log("Powershell data: " + data);
-})
-child.stderr.on("data",(data) =>{
-  console.log("Powershell error: " + data);
-})
-child.on("exit",() =>{
-  console.log("Powershell finished. ");
-})
+if(process.platform === "win32"){
+  child = spawn("powershell.exe",["C:\\Users\\dell\\Desktop\\Proyectos\\Servers\\NodeForm\\createUser.ps1"])
+  child.stdout.on("data",(data) =>{
+    console.log("Powershell data: " + data);
+  })
+  child.stderr.on("data",(data) =>{
+    console.log("Powershell error: " + data);
+  })
+  child.on("exit",() =>{
+    console.log("Powershell finished. ");
+  })
+  
+  vbs = spawn("cscript.exe", ["C:\\Users\\dell\\Desktop\\Proyectos\\Servers\\NodeForm\\CrearCuentaMail.vbs"]);
+  console.log(`stderr: ${vbs.stderr.toString()}`)
+  console.log(`stdout: ${vbs.stdout.toString()}`)
+  console.log(`status: ${vbs.status}`)
+}
 
-vbs = spawn("cscript.exe", ["C:\\Users\\dell\\Desktop\\Proyectos\\Servers\\NodeForm\\CrearCuentaMail.vbs"]);
-console.log(`stderr: ${vbs.stderr.toString()}`)
-console.log(`stdout: ${vbs.stdout.toString()}`)
-console.log(`status: ${vbs.status}`)
 
 // EJECUTAR UBUNTU SHELL
-// shell.exec("./")
+if(process.platform === "linux"){
+  shell.exec("./")
+}
 
 
 app.use(bodyParser.urlencoded({ extended: true }));
