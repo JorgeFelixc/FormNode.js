@@ -9,7 +9,7 @@ const express = require("express"),
     //abriendo power shell
 var  spawn = require("child_process").spawn,child;
 if(process.platform === "win32"){
-  child = spawn("powershell.exe",["C:\\Users\\dell\\Desktop\\Proyectos\\Servers\\NodeForm\\createUser.ps1"])
+  child = spawn("powershell.exe",["C:\\Users\\Administrador\\Desktop\\GithubRepos\\FormNode.js\\createUser.ps1"])
   child.stdout.on("data",(data) =>{
     console.log("Powershell data: " + data);
   })
@@ -20,7 +20,7 @@ if(process.platform === "win32"){
     console.log("Powershell finished. ");
   })
   
-  vbs = spawn("cscript.exe", ["C:\\Users\\dell\\Desktop\\Proyectos\\Servers\\NodeForm\\CrearCuentaMail.vbs"]);
+  vbs = spawn("cscript.exe", ["C:\\Users\\Administrador\\Desktop\\GithubRepos\\FormNode.js\\CrearCuentaMail.vbs"]);
   console.log(`stderr: ${vbs.stderr.toString()}`)
   console.log(`stdout: ${vbs.stdout.toString()}`)
   console.log(`status: ${vbs.status}`)
