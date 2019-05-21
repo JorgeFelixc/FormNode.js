@@ -1,9 +1,10 @@
-var express = require("express"),
+const express = require("express"),
     app = express(),
     bodyParser  = require("body-parser"),
     methodOverride = require("method-override"),
     path = require('path'),
-    fs = require("fs");
+    fs = require("fs"),
+    shell = require("shelljs");
 
     //abriendo power shell
 var  spawn = require("child_process").spawn,child;
@@ -23,6 +24,8 @@ console.log(`stderr: ${vbs.stderr.toString()}`)
 console.log(`stdout: ${vbs.stdout.toString()}`)
 console.log(`status: ${vbs.status}`)
 
+// EJECUTAR UBUNTU SHELL
+// shell.exec("./")
 
 
 app.use(bodyParser.urlencoded({ extended: true }));
