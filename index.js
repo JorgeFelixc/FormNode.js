@@ -8,7 +8,6 @@ const express = require("express"),
 
     //abriendo power shell
 
-
 // EJECUTAR UBUNTU SHELL
 if(process.platform === "linux"){
   shell.exec("./")
